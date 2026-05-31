@@ -1,0 +1,30 @@
+{
+  "name": "stocktrack-pro",
+  "version": "1.0.0",
+  "description": "StockTrack Pro — Desktop Label Printing",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist":  "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.provisionplus.stocktrackpro",
+    "productName": "StockTrack Pro",
+    "files": ["electron/**/*"],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "StockTrack Pro"
+    },
+    "publish": null
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
